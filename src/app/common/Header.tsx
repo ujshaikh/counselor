@@ -1,4 +1,5 @@
-import "../../../public/css/animate.css"
+// import "../../../public/css/animate.css"
+import 'animate.css';
 import "../../../public/css/owl.carousel.min.css"
 import "../../../public/css/owl.theme.default.min.css"
 import "../../../public/css/magnific-popup.css"
