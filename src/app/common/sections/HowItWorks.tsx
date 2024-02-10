@@ -17,8 +17,9 @@ export default function HowItWorks() {
                                     <span className="flaticon-calendar"></span>
                                 </div>
                             </div>
-                            <h2>Make Schedule</h2>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                            <h2 className="text-capitalize">Uniting Faith with Professional Counselling</h2>
+                            <p>
+                                Mental Health and Psychological Treatment are highly stigmatized in the Muslim community.
                             </p>
                         </div>
                     </div>
@@ -30,9 +31,8 @@ export default function HowItWorks() {
                                     <span className="flaticon-qa"></span>
                                 </div>
                             </div>
-                            <h2>Start Discussion</h2>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
-                            </p>
+                            <h2 className="text-capitalize">Objectives of Faith Integrated Therapy</h2>
+                            <p>Applying Islamic teaching based on al Qur’an and Sunnah as a major foundation to identify and replace</p>
                         </div>
                     </div>
                     <div className="col-md-4 d-flex align-items-stretch ftco-animate">
@@ -43,9 +43,8 @@ export default function HowItWorks() {
                                     <span className="flaticon-checklist"></span>
                                 </div>
                             </div>
-                            <h2>Enjoy Plan</h2>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
-                            </p>
+                            <h2 className="text-capitalize">Assessment Model</h2>
+                            <p>Since the focus of the model is essentially on spiritual integration, the assessment is divided into two components</p>
                         </div>
                     </div>
                 </div>

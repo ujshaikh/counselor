@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Introduction() {
     return (
         <section className="ftco-intro">
@@ -8,10 +10,9 @@ export default function Introduction() {
                             <div className="icon">
                                 <span className="flaticon-checklist"></span>
                             </div>
-                            <div className="text">
-                                <h2>100% Confidential</h2>
-                                <p>A small river named Duden flows by their place and supplies it with the necessary
-                                    regelialia.</p>
+                            <div className="text" style={{maxWidth:300}}>
+                                <h2 className="text-wrap">CORPORATE EXCELLENCE</h2>
+                                <p>NLP focuses on sensory experience-what you see, hear and feel. When a sensory... <Link href='#' className="text-decoration">Read More</Link></p>
                             </div>
                         </div>
                     </div>
@@ -21,9 +22,8 @@ export default function Introduction() {
                                 <span className="flaticon-employee"></span>
                             </div>
                             <div className="text">
-                                <h2>Qualified Team</h2>
-                                <p>A small river named Duden flows by their place and supplies it with the necessary
-                                    regelialia.</p>
+                                <h2>GOLDEN PARENTING</h2>
+                                <p>Adopting an effective method for training children is extremely important and... <Link href='#' className="text-decoration">Read More</Link></p>
                             </div>
                         </div>
                     </div>
@@ -33,9 +33,8 @@ export default function Introduction() {
                                 <span className="flaticon-umbrella"></span>
                             </div>
                             <div className="text">
-                                <h2>Individual Approach</h2>
-                                <p>A small river named Duden flows by their place and supplies it with the necessary
-                                    regelialia.</p>
+                                <h2>STRESS MANAGEMENT</h2>
+                                <p>Stress is a constant in all our lives. The pressure to meet our work deadlines... <Link href='#' className="text-decoration">Read More</Link></p>
                             </div>
                         </div>
                     </div>

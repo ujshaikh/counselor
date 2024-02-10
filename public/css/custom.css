@@ -1,0 +1,15 @@
+a.text-decoration {
+    color: #ffff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+ul.service-points {
+    list-style: none;
+    text-indent: 0;
+    padding-left: 0;
+}
+
+ul.service-points li i {
+    color: #589167
+}
