@@ -25,9 +25,7 @@ export default function Breadcrumbs(props: {list: Object[], title: string}) {
     useEffect(() => {
         setTitle(props.title)
         setList(props.list)
-        // loadExternalScript('/js/main.js')
-        // contentWayPoint()
-    }, [])
+    }, [props.list, props.title])
 
     // useEffect(() => {
     //     isScrollingDown && setDirection('down')

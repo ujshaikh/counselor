@@ -1,5 +1,5 @@
 'use client'
-import { JSXElementConstructor, Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, SyntheticEvent, useCallback, useEffect, useRef, useState } from "react"
+import { Key, SyntheticEvent, useState } from "react"
 
 const getKeyByString = (str: string) => str.match(/[a-z]|[0-9]|-/gi)?.join('').toLowerCase()
 
@@ -140,10 +140,10 @@ const ServiceTabPane = ({ items }: any) => {
 const ServiceCategories = ({ services }: any) => {
     const data = Object.keys(services)
 
-    const [activeAccordionIndex, setActiveIndex] = useState(0)
+    const [activeAccordionIndex, setActiveIndex] = useState<any>(0)
 
-    const handleClick = (e: SyntheticEvent) => {
-        const index = e.target.dataset.index
+    const handleClick = (e: SyntheticEvent<HTMLButtonElement>) => {
+        const index = e.currentTarget.dataset.index
         setActiveIndex(index)
     }
 

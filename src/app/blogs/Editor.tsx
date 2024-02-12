@@ -44,7 +44,7 @@ export default function CustomEditor(props: any) {
     const [hasError, setHasError] = useState(false)
     const [isLoading, setLoading] = useState(false)
 
-    const titleRef = useRef(null)
+    const titleRef = useRef<any>(null)
 
     const handleChange = (e: SyntheticEvent | any) => {
         e.preventDefault()
@@ -101,6 +101,7 @@ export default function CustomEditor(props: any) {
             ...formData,
             title: props.data.title
         })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props])
 
     return (

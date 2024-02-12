@@ -5,10 +5,12 @@ import { Key, useEffect, useMemo, useState } from "react";
 export default function RecentBlogs() {
     const [blogs, setBlogsData] = useState([])
     
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const query = new URLSearchParams({
         isRecent: 'true',
         limit: '3'
     })
+    
     const getBlogs = useMemo(async () => {
         return 
     }, [])
@@ -27,7 +29,7 @@ export default function RecentBlogs() {
         }).catch((err) => {
             console.error(err)
         })
-    }, [])
+    }, [query])
 
     return (
         <section className="ftco-section">

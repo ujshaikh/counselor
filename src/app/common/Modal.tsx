@@ -7,6 +7,7 @@ export default function Modal(props: any) {
     const [showCls, setShowCls] = useState('')
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         displayStyle = isOpen ? {display: 'block', paddingRight: '17px'} : {display: 'none'}
         setInlineStyle(displayStyle)
         setShowCls(isOpen ? 'show' : '')

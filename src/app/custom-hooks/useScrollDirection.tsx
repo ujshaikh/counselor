@@ -49,6 +49,7 @@ const useScrollDirection = () => {
             // The order of events is key to making this work, as assigning
             // the previous scroll before checking the direction will result
             // in the direction always being 'up'.
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             prevScrollY = scrollY;
 
             // Set the state to trigger re-rendering
