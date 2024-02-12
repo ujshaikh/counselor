@@ -10,7 +10,7 @@ export default function RecentBlogs() {
         isRecent: 'true',
         limit: '3'
     })
-    
+
     const getBlogs = useMemo(async () => {
         return 
     }, [])
@@ -29,7 +29,8 @@ export default function RecentBlogs() {
         }).catch((err) => {
             console.error(err)
         })
-    }, [query])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <section className="ftco-section">
