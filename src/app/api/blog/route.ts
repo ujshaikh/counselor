@@ -18,8 +18,8 @@ export async function GET(request: NextRequest) {
   }
 
   const {searchParams} = new URL(request.url);
-  const isRecent = searchParams.get("isRecent");
-  const limit = searchParams.get("limit");
+  const isRecent:string | null = searchParams.get("isRecent");
+  const limit:any = searchParams.get("limit");
 
   console.log('Query', isRecent, limit)
 
