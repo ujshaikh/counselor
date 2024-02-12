@@ -33,15 +33,19 @@
 	loader();
 
 	var carousel = function() {
-		$('.carousel-testimony').owlCarousel({
+		const owl = $('.carousel-testimony')
+		owl.owlCarousel({
 			center: true,
-			loop: true,
+			loop: false,
 			autoplay: true,
-			autoplaySpeed:2000,
+			autoplaySpeed:5000,
+			autoplayHoverPause:true,
 			items:1,
 			margin: 30,
 			stagePadding: 0,
 			nav: false,
+			touchDrag: true,
+			dots: true, 
 			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
 			responsive:{
 				0:{
@@ -55,7 +59,6 @@
 				}
 			}
 		});
-
 	};
 	carousel();
 

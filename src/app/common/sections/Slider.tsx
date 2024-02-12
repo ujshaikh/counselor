@@ -4,11 +4,11 @@ import Modal from "../Modal";
 import { useState } from "react";
 
 export default function Slider() {
-    const [showModalCls, setShowModalCls] = useState('')
+    const [showModal, setShowModalCls] = useState(false)
 
     const handleModalClick = () => {
         console.log('cliecked')
-        setShowModalCls(showModalCls.length > 0 ? '' : 'show')
+        setShowModalCls(!showModal)
     }
 
     return (
@@ -39,7 +39,9 @@ export default function Slider() {
                     <button type="button" className="img-video d-flex align-items-center justify-content-center" onClick={handleModalClick}>
                         <span className="fa fa-play"></span>
                     </button>
-                    <Modal show={showModalCls} />
+                    <Modal isOpen={showModal} title='Introduction'>
+                        <></>
+                    </Modal>
                     {/* <a href="https://vimeo.com/45830194"
                         className="img-video popup-vimeo d-flex align-items-center justify-content-center">
                         <span className="fa fa-play"></span>

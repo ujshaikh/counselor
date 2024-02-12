@@ -9,10 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-react": "^6.2.0",
     "animate.css": "^4.1.1",
+    "ckeditor5-custom-build": "file:ckeditor5",
+    "dotenv": "^16.4.2",
+    "joi": "^17.12.1",
     "jquery": "^3.7.1",
     "lodash": "^4.17.21",
     "next": "14.1.0",
+    "nodemailer": "^6.9.9",
     "react": "^18",
     "react-dom": "^18",
     "react-use-scroll-direction": "^0.1.0"
@@ -21,6 +26,7 @@
     "@types/jquery": "^3.5.29",
     "@types/lodash": "^4.14.202",
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",

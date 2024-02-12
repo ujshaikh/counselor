@@ -1,6 +1,34 @@
+'use client'
 import Link from "next/link";
+import { Key, useEffect, useMemo, useState } from "react";
 
 export default function RecentBlogs() {
+    const [blogs, setBlogsData] = useState([])
+    
+    const query = new URLSearchParams({
+        isRecent: 'true',
+        limit: '3'
+    })
+    const getBlogs = useMemo(async () => {
+        return 
+    }, [])
+
+    useEffect(() => {
+        fetch('/api/blog?' + query, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            }
+        }).then(async (data) => {
+            const _blogs = await data.json()
+            console.log('Blogs', _blogs.data)
+            setBlogsData(_blogs.data)
+        }).catch((err) => {
+            console.error(err)
+        })
+    }, [])
+
     return (
         <section className="ftco-section">
             <div className="container">
@@ -11,7 +39,8 @@ export default function RecentBlogs() {
                     </div>
                 </div>
                 <div className="row d-flex">
-                    <div className="col-md-4 d-flex ftco-animate">
+                    {blogs && blogs.map((blog: any, i: Key) =>
+                    (<div className="col-md-4 d-flex ftco-animate" key={i}>
                         <div className="blog-entry justify-content-end">
                             <div className="text text-center">
                                 <Link href="/blogs/Social Media Risks To Mental Health 1" className="block-20 img"
@@ -19,55 +48,18 @@ export default function RecentBlogs() {
                                 </Link>
                                 <div className="meta text-center mb-2 d-flex align-items-center justify-content-center">
                                     <div>
-                                        <span className="day">18</span>
-                                        <span className="mos">April</span>
-                                        <span className="yr">2020</span>
+                                        <span className="day">{new Date(blog.date).getUTCDate()}</span>
+                                        <span className="mos">{new Date(blog.date).toLocaleString('en-us',{month:'short'})}</span>
+                                        <span className="yr">{new Date(blog.date).getFullYear()}</span>
                                     </div>
                                 </div>
-                                <h3 className="heading mb-3"><a href="#">Social Media Risks To Mental Health 1</a></h3>
-                                <p>A small river named Duden flows by their place and supplies it with the necessary
-                                    regelialia.</p>
+                                <h3 className="heading mb-3"><a href="#">{blog.title}</a></h3>
+                                <div dangerouslySetInnerHTML={{ __html: blog.content.substring(0, 200)+'...' }}></div>
+                                <Link href='#' className="text-decoration text-primary">Read More</Link>
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-4 d-flex ftco-animate">
-                        <div className="blog-entry justify-content-end">
-                            <div className="text text-center">
-                                <Link href="/blogs/Social Media Risks To Mental Health 2" className="block-20 img"
-                                    style={{ backgroundImage: "url('images/image_2.jpg')" }}>
-                                </Link>
-                                <div className="meta text-center mb-2 d-flex align-items-center justify-content-center">
-                                    <div>
-                                        <span className="day">18</span>
-                                        <span className="mos">April</span>
-                                        <span className="yr">2020</span>
-                                    </div>
-                                </div>
-                                <h3 className="heading mb-3"><a href="#">Social Media Risks To Mental Health 2</a></h3>
-                                <p>A small river named Duden flows by their place and supplies it with the necessary
-                                    regelialia.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4 d-flex ftco-animate">
-                        <div className="blog-entry justify-content-end">
-                            <div className="text text-center">
-                                <Link href="/blogs/Social Media Risks To Mental Health 3" className="block-20 img"
-                                    style={{ backgroundImage: "url('images/image_3.jpg')" }}>
-                                </Link>
-                                <div className="meta text-center mb-2 d-flex align-items-center justify-content-center">
-                                    <div>
-                                        <span className="day">18</span>
-                                        <span className="mos">April</span>
-                                        <span className="yr">2020</span>
-                                    </div>
-                                </div>
-                                <h3 className="heading mb-3"><a href="#">Social Media Risks To Mental Health 3</a></h3>
-                                <p>A small river named Duden flows by their place and supplies it with the necessary
-                                    regelialia.</p>
-                            </div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>

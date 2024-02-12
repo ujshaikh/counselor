@@ -2,31 +2,6 @@
 import Link from 'next/link';
 import React, { SyntheticEvent, useEffect, useState } from 'react';
 
-// class ExpandText extends React.Component {
-//     constructor(props: any) {
-//         super(props);
-//         this.state = {
-//             showFull: false
-//         };
-//     }
-
-//     render() {
-//         let visibleText = null;
-//         if (this.state.showFull || this.props.text.length <= this.props.maxLength) {
-//             visibleText = this.props.text;
-//         } else {
-//             const firstHalf = this.props.text.substring(0, this.props.maxLength);
-//             // const secondHalf = this.props.text.substring(this.props.text.length - (this.props.maxLength / 2), this.props.text.length)
-//             visibleText = `${firstHalf}...`;
-//         }
-//         const self = this;
-//         const clickHandler = () => {
-//             self.setState({showFull: !self.state.showFull});
-//         }
-//         return <p className={this.props.className}>{visibleText} - <span onClick={clickHandler}>More</span></p>;
-//   }
-// }
-
 export default function ExpandText({text, maxLength, className}: any) {
     const [showFull, setShowFull] = useState(false)
     const [visibleText, setVisibleText] = useState('')
