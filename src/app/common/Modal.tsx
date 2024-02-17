@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 export default function Modal(props: any) {
     const { isOpen, title, displayBottom, modalWrapper } = props
-    let displayStyle = {zIndex: 9999}
+    let displayStyle = {}
     const [inlineStyle, setInlineStyle] = useState(displayStyle)
     const [showCls, setShowCls] = useState('')
 
