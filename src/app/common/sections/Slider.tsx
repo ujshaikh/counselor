@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link";
-import Modal from "../Modal";
 import { useState } from "react";
+import SlideModal from "../SlideModal";
 
 export default function Slider() {
     const [showModal, setShowModalCls] = useState(false)
@@ -36,12 +36,13 @@ export default function Slider() {
                             </p>
                         </div>
                     </div>
-                    <button type="button" className="img-video d-flex align-items-center justify-content-center" onClick={handleModalClick}>
+                    {/* <button type="button" className="img-video d-flex align-items-center justify-content-center" onClick={handleModalClick}>
                         <span className="fa fa-play"></span>
-                    </button>
-                    <Modal isOpen={showModal} title='Introduction'>
-                        <></>
-                    </Modal>
+                    </button> */}
+                    {/* <Modal isOpen={showModal} title='Introduction' displayBottom={false} modalWrapper='slider-modal'>
+                        <iframe width="420" height="345" src="http://www.youtube.com/embed/oHg5SJYRHA0?autoplay=1" frameBorder="0" allowFullScreen></iframe>
+                    </Modal> */}
+                    <SlideModal />
                     {/* <a href="https://vimeo.com/45830194"
                         className="img-video popup-vimeo d-flex align-items-center justify-content-center">
                         <span className="fa fa-play"></span>

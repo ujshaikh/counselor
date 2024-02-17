@@ -41,7 +41,7 @@ export const NavBar = () => {
 
 			<nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 				<div className="container">
-					<a className="navbar-brand" href="/"><Image src="/images/logo.png" width={100} height={50} alt="logo" /></a>
+					<a className="navbar-brand" href="/"><Image src="/images/logo.png" width={250} height={50} alt="logo" /></a>
 					<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 						aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" onClick={handleMenuClick}>
 						<span className={`fas fa-${isMenuClicked ? 'times' : 'bars'}`}></span>{isMenuClicked} Menu
