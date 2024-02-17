@@ -1,5 +1,10 @@
+'use client';
 import HowItWorks from "../common/sections/HowItWorks";
 import Breadcrumbs from "../components/Breadcrumbs";
+import ExpandText from "../components/ExpandText";
+import services from "../../../public/data/services"
+import Appointment from "../common/sections/Appointment";
+import StudentHubCard from "../components/StudentHubCard";
 
 export default function Services() {
     return (
@@ -12,71 +17,33 @@ export default function Services() {
                     <div className="row justify-content-center pb-5">
                         <div className="col-md-10 heading-section text-center ftco-animate">
                             <span className="subheading">Services</span>
-                            <h2>We Can Help You With This Situation</h2>
+                            <h2>We Can Help You By This Services & Programmes</h2>
                         </div>
                     </div>
                 </div>
                 <div className="container-fluid px-0">
                     <div className="row no-gutters">
-                        <div className="col-md-6">
-                            <div className="services-wrap d-flex">
-                                <div className="img" style={{ backgroundImage: "url(images/services-1.jpg)" }}></div>
-                                <div className="text">
-                                    <h2>Relation Problem</h2>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                        {services && services['Our Programmes'].map((service, i) =>
+                            <div className="col-md-6" key={i}>
+                                <div className="services-wrap d-flex">
+                                    <div className="img" style={{ backgroundImage: "url(images/"+service.img+")" }}></div>
+                                    <div className="text">
+                                        <h2>{service.title.toUpperCase()}</h2>
+                                        <ExpandText
+                                            text={service.desc}
+                                            maxLength={200}
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="services-wrap d-flex">
-                                <div className="img" style={{ backgroundImage: "url(images/services-2.jpg)" }}></div>
-                                <div className="text">
-                                    <h2>Couples Counseling</h2>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-md-6">
-                            <div className="services-wrap d-flex">
-                                <div className="img order-md-last" style={{ backgroundImage: "url(images/services-3.jpg)" }}></div>
-                                <div className="text">
-                                    <h2>Depression Treatment</h2>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="services-wrap d-flex">
-                                <div className="img order-md-last" style={{ backgroundImage: "url(images/services-4.jpg)" }}></div>
-                                <div className="text">
-                                    <h2>Family Problem</h2>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-md-6">
-                            <div className="services-wrap d-flex">
-                                <div className="img" style={{ backgroundImage: "url(images/services-5.jpg)" }}></div>
-                                <div className="text">
-                                    <h2>Personal Problem</h2>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="services-wrap d-flex">
-                                <div className="img" style={{ backgroundImage: "url(images/services-6.jpg)" }}></div>
-                                <div className="text">
-                                    <h2>Business Problem</h2>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                </div>
-                            </div>
-                        </div>
+                        )}
                     </div>
                 </div>
             </section>
+
+            <StudentHubCard services={services} />
+
+            <Appointment />
         </>
     )
 }

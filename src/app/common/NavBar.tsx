@@ -1,13 +1,52 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { SyntheticEvent, useState } from "react";
+
+const menu = [
+	{
+		route: '/',
+		title: 'Home'
+	},
+	{
+		route: '/about',
+		title: 'About'
+	},
+	{
+		route: '/services',
+		title: 'Services'
+	},
+	{
+		route: '/pricing',
+		title: 'Pricing'
+	},
+	{
+		route: '/blogs',
+		title: 'Blog'
+	},
+	{
+		route: '/contact',
+		title: 'Contact'
+	},
+]
 
 export const NavBar = () => {
 	const [isMenuClicked, setMenuClicked] = useState(false)
+	const [activeNav, setActiveNav] = useState<any>(0)
+	const router = useRouter();
+
 	const handleMenuClick = (e: SyntheticEvent<HTMLButtonElement>) => {
 		e.preventDefault()
 		setMenuClicked(!isMenuClicked)
+	}
+
+	const handleMenuItemClick = (e: SyntheticEvent<HTMLAnchorElement>) => {
+		e.preventDefault()
+		const index = e.currentTarget.dataset.index
+		setActiveNav(index)
+		router.push(e.currentTarget.href)
+		router.refresh()
 	}
 
 	return (
@@ -49,13 +88,9 @@ export const NavBar = () => {
 
 					<div className="collapse navbar-collapse" id="ftco-nav">
 						<ul className="navbar-nav ml-auto">
-							<li className="nav-item active"><Link href="/" className="nav-link">Home</Link></li>
-							<li className="nav-item"><Link href="/about" className="nav-link">About</Link></li>
-							<li className="nav-item"><Link href="/counselors" className="nav-link">Counselors</Link></li>
-							<li className="nav-item"><Link href="/services" className="nav-link">Services</Link></li>
-							<li className="nav-item"><Link href="/pricing" className="nav-link">Pricing</Link></li>
-							<li className="nav-item"><Link href="/blogs" className="nav-link">Blog</Link></li>
-							<li className="nav-item"><Link href="/contact" className="nav-link">Contact</Link></li>
+							{menu.map((item, key) => 
+								<li className={`nav-item ${key == activeNav ? 'active' : ''}`} key={key}><Link href={item.route} className="nav-link" onClick={handleMenuItemClick} data-index={key}>{item.title}</Link></li>
+							)}
 						</ul>
 					</div>
 				</div>

@@ -7,10 +7,10 @@ export default function ExpandText({text, maxLength, className}: any) {
     const [visibleText, setVisibleText] = useState('')
 
     useEffect(() => {
-        if (showFull || text.length <= maxLength) {
+        if (showFull || (text && text.length <= maxLength)) {
             setVisibleText(text)
         } else {
-            const lessContent = text.substring(0, maxLength)
+            const lessContent = text?.substring(0, maxLength)
             setVisibleText(`${lessContent}...`)
         }
     }, [showFull, text, maxLength])
@@ -21,5 +21,5 @@ export default function ExpandText({text, maxLength, className}: any) {
         setShowFull(!showFull)
     }
 
-    return <p className={className}>{visibleText}<Link href='#' className="ml-2 text-decoration text-primary" onClick={clickHandler}>{!showFull ? 'More' : 'Less'}</Link></p>
+    return <p className={className}>{visibleText}{text && text.length != maxLength && <Link href='#' className="ml-2 text-decoration text-primary" onClick={clickHandler}>{!showFull ? 'More' : 'Less'}</Link>}</p>
 }

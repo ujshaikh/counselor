@@ -4,3 +4,10 @@ export type ContactProps = {
     service: string,
     message: string
 }
+
+export type ServiceProps = {
+    title: string,
+    desc: string,
+    img: string,
+    points: string
+}
