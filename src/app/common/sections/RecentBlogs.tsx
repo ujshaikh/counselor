@@ -47,7 +47,7 @@ export default function RecentBlogs() {
                         <div className="blog-entry justify-content-end">
                             <div className="text text-center">
                                 <Link href="/blogs/Social Media Risks To Mental Health 1" className="block-20 img"
-                                    style={{ backgroundImage: "url('images/image_1.jpg')" }}>
+                                    style={{ backgroundImage: "url('images/blogs/"+blog.blogImg+"')" }}>
                                 </Link>
                                 <div className="meta text-center mb-2 d-flex align-items-center justify-content-center">
                                     <div>

@@ -14,11 +14,11 @@ export default function Slider() {
     return (
         <div className="hero-wrap" style={{ backgroundImage: "url('images/bg_1.jpg')" }} data-stellar-background-ratio="0.5">
             <div className="overlay"></div>
-            <div className="container">
+            <div className="container slider">
                 <div className="row no-gutters slider-text align-items-center">
                     <div className="col-md-6 ftco-animate d-flex align-items-end">
                         <div className="text w-100">
-                            <h1 className="mb-4">YOUR PERCEPTION IS YOUR REALITY</h1>
+                            <h1 className="mb-4 mobile-text">YOUR PERCEPTION IS YOUR REALITY</h1>
                             <blockquote className="blockquote text-left">
                                 <p className="mb-0">When sorrow seizes you, if you are wise,
                                 you will question that sorrow-fraught moment,

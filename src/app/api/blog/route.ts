@@ -12,21 +12,26 @@ export async function GET(request: NextRequest) {
   const fileName = 'blogs.json'
   const filePath = path.resolve(defaultPath, fileName)
   let data = []
-  
-  if(fs.existsSync(filePath)) {
-    data = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
-  }
 
-  const {searchParams} = new URL(request.url);
+  const searchParams = request.nextUrl.searchParams;
   const isRecent:string | null = searchParams.get("isRecent");
   const limit:any = searchParams.get("limit");
+  const onlyImgs:string | null = searchParams.get("onlyImgs")
 
-  console.log('Query', isRecent, limit)
+  if (onlyImgs == 'true') {
+    // Get all uploaded images to public folder
+    const blogImgPath = process.env.BLOG_IMAGES_PATH || './public/images/blogs/' 
+    data = fs.readdirSync(blogImgPath)
 
-  if (isRecent == 'true') {
-    data = data.slice(Math.abs(limit) * -1)
+  } else {
+    if(fs.existsSync(filePath)) {
+      data = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+    }
+  
+    if (isRecent == 'true') {
+      data = data.slice(Math.abs(limit) * -1)
+    }
   }
-
   return NextResponse.json({ message: "", data });
 }
 

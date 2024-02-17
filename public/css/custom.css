@@ -13,3 +13,60 @@ ul.service-points {
 ul.service-points li i {
     color: #589167
 }
+
+div.bg-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.w-97 {
+    width: 97% !important;
+}
+
+.mobile-only {
+    display: none;
+}
+
+.services-select {
+    border-radius: 5px;
+    border-color: #d8d8d8;
+}
+
+.img-fill-avl{
+    width: -webkit-fill-available !important;
+    height: -webkit-fill-available !important;
+}
+
+@media (max-width: 768px){
+    .mobile-hidden {
+        display: none;
+    }
+    .mobile-only {
+        display: inline;
+    }
+    .ftco-navbar-light {
+        background: #ffffff !important;
+        position: relative;
+        top: 0;
+        padding: 10px 15px;
+    }
+    .ftco-navbar-light .navbar-toggler{
+        color: #000000 !important;
+    }
+    .slider .mobile-text {
+        font-size: 30px !important;
+    }
+    .slider .slider-text {
+        height: 625px !important;
+    }
+    .slider-text .img-video{
+        bottom: -100px;
+    }
+    .ftco-navbar-light .navbar-nav>.nav-item>.nav-link {
+        color: #4e4e4e;
+    }
+    .no-mobile{
+        display: none !important;
+    }
+}

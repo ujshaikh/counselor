@@ -9,7 +9,8 @@ const contact = joi.object({
 
 const blogPost = joi.object({
     title: joi.string().required(),
-    content: joi.string().required()
+    content: joi.string().required(),
+    blogImg: joi.string().allow(null)
 })
 
 const validation = {

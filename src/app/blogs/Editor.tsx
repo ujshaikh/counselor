@@ -1,39 +1,19 @@
 'use client'
 import React, { SyntheticEvent, useEffect, useRef, useState } from 'react';
 import { CKEditor } from "@ckeditor/ckeditor5-react";
-import Editor from "ckeditor5-custom-build";
+// import Editor from "ckeditor5-custom-build";
+import Editor from '@ckeditor/ckeditor5-build-classic'
 import Modal from '../common/Modal';
 
 const editorConfiguration = {
-    toolbar: [
-        'heading',
-        '|',
-        'bold',
-        'italic',
-        'link',
-        'bulletedList',
-        'numberedList',
-        '|',
-        'outdent',
-        'indent',
-        'styles', 
-        'image',        
-        '|',
-        'blockQuote',
-        'insertTable',
-        'undo',
-        'redo',
-        'textColor', 
-        'bgColor',
-        '|',
-        'format', 
-        'font', 
-        'fontSize',
-    ]
+    removePlugins: ['Title'],
+    toolbar: ['heading', '|', 'bold', 'italic', 'blockQuote', 'link', 'numberedList', 'bulletedList', 'imageUpload', 'insertTable',
+    'tableColumn', 'tableRow', 'mergeTableCells', 'mediaEmbed', '|', 'undo', 'redo']
 };
 
 const initialData = {
     title: '',
+    blogImg: '',
     content: ''
 }
 
@@ -43,6 +23,7 @@ export default function CustomEditor(props: any) {
     const [isOpen, setIsOpenModal] = useState(false)
     const [hasError, setHasError] = useState(false)
     const [isLoading, setLoading] = useState(false)
+    const [blogImages, setBlogImages] = useState([])
 
     const titleRef = useRef<any>(null)
 
@@ -95,12 +76,19 @@ export default function CustomEditor(props: any) {
         })
     }
 
+    async function getBlog () {
+        const res = await fetch('/api/blog/?onlyImgs=true')
+        return res.json()
+    }
+
     useEffect(() => {
         setContent(props.data.content)
         setFormData({
             ...formData,
             title: props.data.title
         })
+
+        getBlog().then(blog => setBlogImages(blog.data))
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props])
 
@@ -112,10 +100,20 @@ export default function CustomEditor(props: any) {
                     <input name="title" type="text" className="form-control" id="blogTitle" placeholder="Enter blog title" onChange={handleChange} value={formData.title} ref={titleRef} />
                 </div>
                 <div className="form-group">
+                    <label htmlFor="blogTitle">Select Blog Image</label>
+                    <select name="blogImg" id="blogImg" className="form-control" onChange={handleChange} value={formData.blogImg}>
+                        <option value="">Select Uploaded Image for this blog</option>
+                        {blogImages?.map((img, i) => 
+                            <option value={img} key={i}>{img}</option>
+                        )}
+                    </select>
+                </div>
+                <div className="form-group">
                     <label htmlFor="blogContent">Blog Content</label>
                     <CKEditor
                         id="blogContent"
                         editor={Editor}
+                        config={editorConfiguration}
                         data={content || ''}
                         onChange={(event, editor: any) => {
                             const data = editor.getData();

@@ -1,4 +1,6 @@
 'use client'
+import Image from "next/image"
+import Link from "next/link"
 import { Key, SyntheticEvent, useState } from "react"
 
 const getKeyByString = (str: string) => str.match(/[a-z]|[0-9]|-/gi)?.join('').toLowerCase()
@@ -137,29 +139,53 @@ const ServiceTabPane = ({ items }: any) => {
     )
 }
 
+const AllServicePane = ({ items }: any) => {
+    return (
+        items.map((item: any, i: number) =>
+            <div className={`px-md-3 ftco-animate py-3 p-2`} key={i}>
+                <h3><a href="#">{item.title}</a></h3>
+                <Image className="img-fill-avl" src={`/images${item.img}`} alt="service" width={600} height={500}/>
+                <p>{item.desc}</p>
+                {item.points && (
+                    <ul className="service-points">
+                        {item.points.split('/').map((point: string, i: Key) =>
+                            <li key={i}><i className="fas fa-check-square"></i><span className="ml-2">{point}</span></li>
+                        )}
+                    </ul>
+                )}
+            </div>
+        )
+    )
+}
+
 const ServiceCategories = ({ services }: any) => {
     const data = Object.keys(services)
 
     const [activeAccordionIndex, setActiveIndex] = useState<any>(0)
 
-    const handleClick = (e: SyntheticEvent<HTMLButtonElement>) => {
+    const handleClick = (e: SyntheticEvent<HTMLAnchorElement>) => {
+        // e.preventDefault()
         const index = e.currentTarget.dataset.index
         setActiveIndex(index)
     }
 
     return (
         data.map((service, i) => (
-            <div className="servicesAccordion" id={`accordion-${i}`} key={i}>
+            <div className="servicesAccordion fade-in" id={`service-accordion-${i}`} key={i}>
                 <div className="card">
                     <div className="card-header" id={`heading-${i}`}>
                         <h2 className="mb-0">
-                            <button className="btn btn-link btn-block text-left" type="button" aria-expanded={activeAccordionIndex == i ? 'true' : 'false'} data-index={i} data-title={service} onClick={handleClick}>
+                            <Link href={`#service-accordion-${i}`} className="btn btn-link btn-block text-left" aria-expanded={activeAccordionIndex == i ? 'true' : 'false'} data-index={i} data-title={service} onClick={handleClick}>
                                 {service}
-                            </button>
+                            </Link>
                         </h2>
                     </div>
+                    
+                    <div className={`mobile-only collapse ${activeAccordionIndex == i ? 'show' : 'fade'}`} id={`accordion-body-${i}`}>
+                        <AllServicePane items={services[service]} />
+                    </div>
 
-                    <div className={`collapse ${activeAccordionIndex == i ? 'show' : 'fade'}`}>
+                    <div className={`mobile-hidden collapse ${activeAccordionIndex == i ? 'show' : 'fade'}`}>
                         <div className="card-body">
                             <div className="row tabulation mt-4 ftco-animate">
                                 <div className="col-md-4">

@@ -1,4 +1,3 @@
-'use client'
 import dynamic from 'next/dynamic';
 import React from 'react';
 
@@ -6,7 +5,7 @@ const CustomEditor = dynamic(() => {
     return import('../Editor');
 }, { ssr: false });
 
-export default function CreateBlog() {
+function CreateBlog() {
     return (
         <div className="App">
             <CustomEditor
@@ -15,3 +14,5 @@ export default function CreateBlog() {
         </div>
     );
 }
+
+export default CreateBlog

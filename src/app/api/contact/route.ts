@@ -31,7 +31,7 @@ export async function POST(request: Request) {
 
   const data = {
     from: process.env.SMTP_USER,
-    to: process.env.SMTP_USER,
+    to: process.env.RECIPEINTS,
     subject: `Message from ${email}`,
     text: `${message}  | Sent from: ${name}<${email}>`,
     html: `<p>Selected service: ${service}</p><div>${message}</div><p>Sent from: ${name}<${email}></p>`

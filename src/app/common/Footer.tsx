@@ -8,8 +8,8 @@ export default function Footer() {
 					<div className="row mb-5">
 						<div className="col-sm-12 col-md">
 							<div className="ftco-footer-widget mb-4">
-								<h2 className="ftco-heading-2 logo"><a href="#">Counselor</a></h2>
-								<p>Far far away, behind the word mountains, far from the countries.</p>
+								<h2 className="ftco-heading-2 logo"><a href="#">Aftab Siddiqui</a></h2>
+								<p>Conscientious and caring counselor with extensive knowledge of offering advice, support, and guidance...</p>
 								<ul className="ftco-footer-social list-unstyled mt-2">
 									<li className="ftco-animate"><a href="#"><span className="fa-brands fa-twitter"></span></a></li>
 									<li className="ftco-animate"><a href="#"><span className="fa-brands fa-facebook"></span></a></li>
@@ -55,12 +55,10 @@ export default function Footer() {
 								<h2 className="ftco-heading-2">Have a Questions?</h2>
 								<div className="block-23 mb-3">
 									<ul>
-										<li><span className="icon fa fa-map marker"></span><span className="text">203 Fake St. Mountain
-											View, San Francisco, California, USA</span></li>
-										<li><a href="#"><span className="icon fa fa-phone"></span><span className="text">+2 392 3929
-											210</span></a></li>
+										<li><span className="icon fa fa-map marker"></span><span className="text">B-32, 2nd Floor, Raj Complex, Military road , Marol , Mumbai - 59</span></li>
+										<li><a href="#"><span className="icon fa fa-phone"></span><span className="text">+91 983 374 9190</span></a></li>
 										<li><a href="#"><span className="icon fa fa-paper-plane pr-4"></span><span
-											className="text">info@yourdomain.com</span></a></li>
+											className="text">aftablifecoach@gmail.com</span></a></li>
 									</ul>
 								</div>
 							</div>
