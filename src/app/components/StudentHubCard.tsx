@@ -5,7 +5,7 @@ import moment from "moment";
 
 export default function StudentHubCard({services}: any) {
     return (
-        <section className="ftco-section px-4">
+        <section className="ftco-section px-4" id="student-hub">
             <div className="container">
                 <div className="row justify-content-center pb-5">
                     <div className="col-md-10 heading-section text-center ftco-animate">

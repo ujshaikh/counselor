@@ -22,7 +22,6 @@ export async function GET(request: NextRequest) {
     // Get all uploaded images to public folder
     const blogImgPath = process.env.BLOG_IMAGES_PATH || './public/images/blogs/' 
     data = fs.readdirSync(blogImgPath)
-
   } else {
     if(fs.existsSync(filePath)) {
       data = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
@@ -30,6 +29,8 @@ export async function GET(request: NextRequest) {
   
     if (isRecent == 'true') {
       data = data.slice(Math.abs(limit) * -1)
+    } else if (parseInt(limit) > 0) {
+      data = data.slice(Math.abs(limit))
     }
   }
   return NextResponse.json({ message: "", data });

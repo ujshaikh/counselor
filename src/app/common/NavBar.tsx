@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SyntheticEvent, useState } from "react";
+import SocialMedia from "../components/SocialMedia";
 
 const menu = [
 	{
@@ -24,6 +25,10 @@ const menu = [
 	{
 		route: '/blogs',
 		title: 'Blog'
+	},
+	{
+		route: '/gallery',
+		title: 'Gallery'
 	},
 	{
 		route: '/contact',
@@ -61,18 +66,7 @@ export const NavBar = () => {
 							</p>
 						</div>
 						<div className="col-md-6 d-flex justify-content-md-end no-mobile">
-							<div className="social-media">
-								<p className="mb-0 d-flex">
-									<a href="#" className="d-flex align-items-center justify-content-center"><span
-										className="fa-brands fa-facebook-f"><i className="sr-only">Facebook</i></span></a>
-									<a href="#" className="d-flex align-items-center justify-content-center"><span
-										className="fa-brands fa-twitter"><i className="sr-only">Twitter</i></span></a>
-									<a href="#" className="d-flex align-items-center justify-content-center"><span
-										className="fa-brands fa-instagram"><i className="sr-only">Instagram</i></span></a>
-									<a href="#" className="d-flex align-items-center justify-content-center"><span
-										className="fa-brands fa-dribbble"><i className="sr-only">Dribbble</i></span></a>
-								</p>
-							</div>
+							<SocialMedia />
 						</div>
 					</div>
 				</div>

@@ -1,4 +1,3 @@
-import { Key } from "react";
 import services from "../../../../public/data/services";
 import ExpandText from "@/app/components/ExpandText";
 import Image from "next/image";
@@ -13,7 +12,7 @@ const padNumber: any = (number: number, length: number) => {
 
 export default function HowItWorks() {
     return (
-        <section className="ftco-section">
+        <section className="ftco-section" id="our-programmes">
             <div className="container">
                 <div className="row justify-content-center pb-5">
                     <div className="col-md-7 heading-section text-center ftco-animate">

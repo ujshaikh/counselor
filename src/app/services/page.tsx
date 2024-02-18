@@ -12,7 +12,7 @@ export default function Services() {
             <Breadcrumbs list={[{ title: 'Home', route: '/', isCurrent: false }, { title: 'Services', route: '', isCurrent: true }]} title='Services' />
             <HowItWorks />
 
-            <section className="ftco-section bg-light">
+            <section className="ftco-section bg-light" id="counselling-services">
                 <div className="container">
                     <div className="row justify-content-center pb-5">
                         <div className="col-md-10 heading-section text-center ftco-animate">

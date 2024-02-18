@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,11 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <ErrorBoundary>
       <body className={inter.className} suppressHydrationWarning={true}>
         <Header />
         {children}
         <Footer />
       </body>
+      </ErrorBoundary>
     </html>
   );
 }

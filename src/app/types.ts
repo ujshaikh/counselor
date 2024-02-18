@@ -11,3 +11,13 @@ export type ServiceProps = {
     img: string,
     points: string
 }
+
+export type BlogProps = {
+    id?: string,
+    title: string,
+    content: string,
+    blogImg: string,
+    date: string
+}
+
+export type PaginationProps = { totalCount: number, pageSize: number, siblingCount: number, currentPage: number }

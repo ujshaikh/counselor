@@ -9,7 +9,6 @@ function SlideModal() {
     const handleShow = () => setShow(true);
 
     useEffect(() => {
-        console.log('modalRef.current', window.innerHeight*0.75)
         setIframeSize({width: window.innerWidth*0.90, height: window.innerHeight-50})
     }, [])
 

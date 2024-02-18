@@ -22,8 +22,11 @@
     "nodemailer": "^6.9.9",
     "react": "^18",
     "react-bootstrap": "^2.10.1",
+    "react-bootstrap-typeahead": "^6.3.2",
     "react-dom": "^18",
-    "react-use-scroll-direction": "^0.1.0"
+    "react-photo-album": "^2.3.1",
+    "react-use-scroll-direction": "^0.1.0",
+    "yet-another-react-lightbox": "^3.17.0"
   },
   "devDependencies": {
     "@types/ckeditor__ckeditor5-build-classic": "^37.0.0",
@@ -37,6 +40,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
+    "sass": "^1.71.0",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }
