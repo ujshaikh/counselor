@@ -10,9 +10,10 @@ import "../../../public/fontawesome/css/fontawesome.css"
 import "../../../public/fontawesome/css/brands.css"
 import "../../../public/fontawesome/css/solid.css"
 import "../../../public/css/custom.css"
+import "../../../public/css/_custom.css"
 
-import { NavBar } from "./NavBar"
+import _NavBar from "./_NavBar"
 
 export default function Header() {
-    return <NavBar />
+    return <_NavBar />
 }

@@ -13,9 +13,15 @@ const blogPost = joi.object({
     blogImg: joi.string().allow(null)
 })
 
+const login = joi.object({
+    email: joi.string().email().required(),
+    password: joi.string().min(6).required()
+})
+
 const validation = {
     contact,
-    blogPost
+    blogPost,
+    login
 }
 
 export default validation

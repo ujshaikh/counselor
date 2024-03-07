@@ -12,14 +12,14 @@ export default function Slider() {
     }
 
     return (
-        <div className="hero-wrap" style={{ backgroundImage: "url('images/bg_1.jpg')" }} data-stellar-background-ratio="0.5">
+        <div className="hero-wrap" data-stellar-background-ratio="0.5">
             <div className="overlay"></div>
             <div className="container slider">
                 <div className="row no-gutters slider-text align-items-center">
                     <div className="col-md-6 ftco-animate d-flex align-items-end">
                         <div className="text w-100">
-                            <h1 className="mb-4 mobile-text">YOUR PERCEPTION IS YOUR REALITY</h1>
-                            <blockquote className="blockquote text-left">
+                            <h1 className="mb-4 mobile-text animate__animated animate__rubberBand animate__delay-2s">YOUR PERCEPTION IS YOUR REALITY</h1>
+                            <blockquote className="blockquote text-left animate__animated animate__backInUp animate__delay-2s">
                                 <p className="mb-0">When sorrow seizes you, if you are wise,
                                 you will question that sorrow-fraught moment,
                                 saying to it, “O sorrow, who now deniest
@@ -31,8 +31,7 @@ export default function Slider() {
                                 <footer className="blockquote-footer"><cite title="Source Title">Rumi</cite></footer>
                             </blockquote>
                             <p>
-                                <Link href="/contact" className="btn btn-primary py-3 px-4">Contact us</Link>
-                                <Link href="/about" className="btn btn-white py-3 px-4">Read more</Link>
+                                <Link href="/contact" className="button button-1 button-1e py-3 px-4">Contact us</Link>
                             </p>
                         </div>
                     </div>

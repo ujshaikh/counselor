@@ -56,7 +56,7 @@ const AllServicePane = ({ items }: any) => {
         items.map((item: any, i: number) =>
             <div className={`px-md-3 ftco-animate py-3 p-2`} key={i}>
                 <h3><a href="#">{item.title}</a></h3>
-                <Image className="img-fill-avl" src={`/images${item.img}`} alt="service" width={600} height={500}/>
+                <Image className="img-fill-avl" src={`/images/${item.img}`} alt="service" width={600} height={500}/>
                 <p>{item.desc}</p>
                 {item.points && (
                     <ul className="service-points">

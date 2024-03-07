@@ -1,0 +1,271 @@
+.ftco-intro .intro.aside-stretch:after{
+    background: #fdd8b2;
+}
+
+.ftco-intro .intro.aside-stretch {
+    background: #ffb66c;
+}
+
+.intro.color-1 {
+    background: #cd7b28;
+}
+
+.intro.color-2 {
+    background: #621616;
+}
+
+.btn.btn-primary {
+    background: #621616 !important;
+    border: 1px solid #ffb66c !important;
+}
+
+.slider-text .img-video span {
+    color: #621616;
+}
+
+.services-2 .icon:after {
+    background: #621616;
+}
+
+.services-2:hover .icon {
+    background: #621616;
+}
+
+.services-2:hover .icon:after{
+    background: #62161657 !important
+}
+
+.services-2 .icon-wrap .number{
+    background: #621616;
+}
+
+.ftco-counter .text strong.number{
+    color: #621616;
+}
+
+.wrap-about .play-video .icon span{
+    color: #621616;
+}
+
+.heading-section .subheading{
+    color: #ffb66c;
+}
+
+.servicesAccordion .btn-link {
+    color: #ffb66c;
+}
+.card {
+    border: 1px solid #621616;
+}
+.card-header {
+    background-color: #621616;
+}
+
+.tabulation .nav-pills .nav-item .nav-link.active {
+    background: #ffb66c;
+    border: 1px solid #621616;
+    color: #621616;
+}
+ul.service-points li i{
+    color: #621616;
+}
+
+.testimony-section .overlay{
+    background: #ffb66c;
+}
+
+.testimony-wrap .icon{
+    background: #621616;
+}
+
+.block-7 .price .number{
+    color: #621616;
+}
+
+.block-7 .pricing-text li span.fa{
+    color: #621616;
+}
+
+.block-7 .btn-primary:hover, .block-7 .btn-primary:focus {
+    background-color: #ffb66c !important;
+    color: #621616 !important;
+    border-color: #621616 !important;
+}
+
+.ftco-appointment .overlay{
+    background: #ffb66c;
+}
+
+.blog-entry:hover .meta{
+    background: #621616;
+}
+
+.blog-entry .meta span.mos{
+    color: #ffb66c;
+}
+
+.blog-entry .meta span.day{
+    color: #621616;
+}
+
+.blog-entry .meta span.yr{
+    color: #000
+}
+
+.blog-entry .text .heading a:hover, .blog-entry .text .heading a:focus, .blog-entry .text .heading a:active{
+    color: #ffb66c;
+}
+.ftco-footer-social li a{
+    background: #621616;
+}
+
+/* Stylish button */
+.button {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 10px 25px;
+    display: inline-block;
+    margin: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.button:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+/* Button 1 */
+.button-1 {
+    border: 3px solid #ffb66c;
+    color: #ffb66c;
+}
+.button-1e {
+    overflow: hidden;
+}
+.button-1e:after {
+    width: 100%;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    background: #ffb66c;
+    opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+.button-1e:hover,
+.button-1e:active {
+    color: #621616;
+    border: 3px solid #621616;
+}
+.button-1e:hover:after {
+    height: 335%;
+    opacity: 1;
+}
+.button-1e:active:after {
+    height: 400%;
+    opacity: 1;
+}
+
+/* Typography */
+.text-primary{
+    color: #621616 !important;
+}
+.slider-text p{
+    text-shadow: 0 0 10px #7c2222;
+    color: #ffffff;
+}
+.slider-text h1{
+    color: #621616;
+}
+/* Animation */
+:root {
+    --animate-duration: 2s;
+}
+/* Cool infinite background scrolling animation.
+ * Twitter: @kootoopas
+ */
+/* Exo thin font from Google. */
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 0px 0px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 0px 0px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 0px 0px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 0px 0px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 0px 0px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 0px 0px;
+  }
+}
+/* Main styles */
+.hero-wrap {
+  color: #999;
+  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+  text-align: center;
+  /* img size is 50x50 */
+  /* background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0; */
+  background: url('/images/bg_1.jpg') no-repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse 5s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse 5s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse 5s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse 5s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+  background-size: contain;
+}
+.hero-wrap::before {
+  /* content: "INFINITY"; */
+  font-size: 8rem;
+  font-weight: 100;
+  font-style: normal;
+}

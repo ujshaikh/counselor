@@ -91,6 +91,10 @@ img.how-it-work {
     height: 100px;
 }
 
+.table-responsive {
+    max-height:400px;
+}
+
 @media (max-width: 768px) {
     .mobile-hidden {
         display: none;

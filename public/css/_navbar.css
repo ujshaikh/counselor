@@ -1,0 +1,144 @@
+.top-bar .nav-item,
+.main-nav .nav-item {
+    display: inline-block;
+}
+
+.custom-nav nav {
+    padding: 0px;
+}
+
+.custom-nav nav.top-bar-wrap {
+    background: #ffb66c;
+}
+
+.top-bar-wrap {
+    height: 40px;
+    line-height: 40px;
+}
+
+.main-nav-wrap {
+    height: 80px;
+    line-height: 80px;
+}
+
+.custom-nav nav.main-nav-wrap {
+    background: #7c2222;
+    font-size: 1.25rem
+}
+
+.custom-nav nav.top-bar-wrap ul,
+.custom-nav nav.main-nav-wrap ul {
+    margin-bottom: 0px;
+    margin-top: 0px
+}
+
+.custom-nav a.nav-link:hover {
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border-left: 12px solid rgba(0, 0, 0, 0.3);
+}
+
+.custom-nav a.nav-link {
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    color: #f9f9f9;
+    text-transform: uppercase;
+    font-family: 'Rubik',sans-serif;
+    transform: skew(-25deg);
+    transition: all 400ms ease-out
+}
+
+.custom-nav a .inner-link {
+    display: inline-block;
+    transform: skew(25deg)
+}
+
+.custom-nav .nav-link {
+    padding: 0px;
+}
+
+.top-bar-wrap a {
+    padding-left: 12px;
+}
+
+.main-nav-wrap a {
+    padding-left: 18px;
+}
+
+.brand-logo img {
+    height: auto;
+    width: auto;
+    transform: skew(25deg);
+    margin-top: -16px;
+}
+
+.brand-phone a {
+    display: block;
+    font-size: 1em;
+    text-decoration: none;
+    color: #000000;
+    letter-spacing: 2px;
+    height: 40px;
+    line-height: 1.5em;
+}
+
+.brand-phone,
+.brand-logo {
+    position: absolute;
+    top: 0;
+    height: 120px;
+}
+.brand-logo {
+    padding: 40px;
+    transform: skewX(-25deg);
+}
+
+.brand-logo {
+    left: -30px;
+    padding-left: 70px;
+    background: #621616;
+    border-right: 2px solid #ffb66c;
+
+}
+
+.brand-phone {
+    padding: 20px;
+    right: 0;
+    padding-right: 70px;
+    background: #ffb66c;
+    border-left: 3px solid #6c4013;
+}
+
+/* Responsiveness */
+.brand-logo {
+    padding: 40px 0px 0px 30px;
+    left: -30px;
+}
+
+.brand-phone {
+    padding-right: 12px;
+}
+
+.ftco-navbar-light{
+    padding: 0 !important
+}
+#header_shadow {
+    background: url(/images/shadow.png) no-repeat top center;
+    position: absolute;
+    top: 22%;
+    left: 0;
+    right: 0;
+    height: 20px;
+    z-index: 99;
+    width: 100%;
+}
+
+.ftco-navbar-light.scrolled.awake .top-bar-wrap{
+    line-height: 12px;
+}
+.ftco-navbar-light.scrolled.awake .main-nav-wrap {
+    line-height: 50px;
+}
+.ftco-navbar-light.scrolled.awake #header_shadow {
+    top: 100%;
+}
